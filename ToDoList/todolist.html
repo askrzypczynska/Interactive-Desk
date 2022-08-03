@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List To Do</title>
+    <script src="https://kit.fontawesome.com/fe4ecc5880.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    
+
+</head>
+<body>
+
+    <div class="toDo">
+
+        <div class="header-todo">
+            <input type="text" placeholder="Enter the task text" class="todo-input">
+            <button class="addToDo"><i class="fa-regular fa-square-plus"></i></button>
+        </div>
+    
+        <div class="list-todo">
+
+            <ul>
+                <template class="todoTemp">
+                    <li>
+                        <i class="fa-regular fa-square"></i><p class="taskInfo" class="completed-todo">Eat Dinner</p><button class="delete-todo"><i class="fas fa-times"></i></button>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script> 
+    
+</body>
+</html>
+
