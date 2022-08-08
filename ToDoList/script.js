@@ -1,25 +1,43 @@
-// <i class="fa-regular fa-square-check"></i> kwadrat z ptaszkiem do zamiany 
-
 const addToDoBtn = document.querySelector(".addToDo");
 const inputToDo = document.querySelector(".todo-input");
-const checkboxToDoBtn = document.querySelector(".checkbox-todo");
 const ul = document.querySelector("ul");
-const deleteToDoBtn = document.querySelector(".delete-todo");
 const todoTaskTemp = document.querySelector(".todoTemp")
-let num=1
+let taskNumber = 0
+let defaultTask = 5
 
 const addNewTask = () => {
-    if(inputToDo.value!==""){
+    taskNumber++
     const task = todoTaskTemp.content.cloneNode(true);
-    task.querySelector(".taskInfo").textContent = inputToDo.value
+    if(taskNumber <= 11){
+            task.querySelector(".fa-regular").addEventListener("click", checkClick)
+            
+            task.querySelector(".fa-times").addEventListener("click", deleteNewTask)
+    } if(taskNumber === 11){
+        //full list
+        inputToDo.placeholder = "Task list is Full"
+        inputToDo.disabled = true;
+    }
 
-    task.querySelector(".fa-regular").addEventListener("click", checkClick)
-
-    ul.appendChild(task)
-
-    inputToDo.value = ""
+    if(taskNumber <= defaultTask){
+        if(taskNumber===1) {
+            task.querySelector(".taskInfo").textContent = "Calculate how much shark's liver weighs."
+        }else if(taskNumber===2){
+            task.querySelector(".taskInfo").textContent = "zadanie 2"
+        }else if(taskNumber===3){
+            task.querySelector(".taskInfo").textContent = "zadanie 3"
+        }else if(taskNumber===4){
+            task.querySelector(".taskInfo").textContent = "zadanie 4"
+        }else if(taskNumber===5){
+            task.querySelector(".taskInfo").textContent = "zadanie 5"
+        }
+        ul.appendChild(task)
+        inputToDo.value = ""
     }else {
-        alert("Enter the task text!")    
+        if(inputToDo.value!==""){
+            task.querySelector(".taskInfo").textContent = inputToDo.value
+            ul.appendChild(task)
+            inputToDo.value = ""
+        }
     }
 }
 
@@ -29,11 +47,17 @@ const checkClick = e => {
     e.target.classList.toggle("fa-square-check")
     e.target.closest("li").querySelector(".taskInfo").classList.toggle("completed-todo")
 
-    console.log(e.target.closest("li").querySelector(".taskInfo"));
-    
+}
+
+const deleteNewTask = e => {
+    e.target.closest('li').remove()
+    taskNumber--
+    inputToDo.disabled = false;
+    inputToDo.placeholder = "Enter the task text"
 }
 
 
 addToDoBtn.addEventListener('click', addNewTask)
-//checkboxToDoBtn.addEventListener('click', completeTask)
-//ul.addEventListener('click', checkClick)
+for(let i=0; i<defaultTask; i++){
+    addNewTask()
+}
