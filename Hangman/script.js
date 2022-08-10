@@ -57,7 +57,6 @@ const checkLetter = e => {
 		}
 
 	}else{
-		e.target.classList.add("letterUsed")
 		console.log("false");
 	}
 
@@ -66,3 +65,6 @@ const checkLetter = e => {
 
 newGameBtn.addEventListener("click", hangStart)
 lettersHang.addEventListener("click", checkLetter)
+
+
+//e.target.classList.add("letterUsed")
