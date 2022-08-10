@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    caret-color: transparent;
+}
+
+.hangman {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Mansalva';
+    font-size: 30px;
+    background: radial-gradient(#fffdfc, #fcf1ed);
+    border: solid 3px #efd8d0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    width: 480px;
+    height: 630px;
+    padding: 20px;
+    color: #b59b92;
+}
+
+.passwordHang {
+    display: block;
+    height: 47px;
+    color: #a27a7a;
+    letter-spacing: 4px;
+}
+
+.piniataImg img{
+    width: 400px;
+    height: 400px;
+}
+
+.lettersHang{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.letterUsed{
+    text-decoration: line-through;
+    cursor: none;
+}
+
+.letterUsed:hover{
+    text-shadow: none;
+    color: #a27a7a;
+}
+
+.lettersHang button{
+    justify-content: space-between;
+    border: none;
+    background-color: transparent;
+    font-family: 'Mansalva';
+    font-size: 28px;
+    cursor: pointer;
+    color: #b59b92;
+}
+
+.lettersHang button:hover {
+    text-shadow: #b59b92 1px 0 10px;
+    color: #85726b;
+}
+
+.newGameHang{
+    float: right;
+    border: none;
+    background-color: transparent;
+    font-family: 'Mansalva';
+    cursor: pointer;
+    font-size: 20px;
+    color: #a27a7a;
+}
+.newGameHang:hover{
+    text-shadow: #a27a7a 1px 0 10px;
+    color: #876666;
+}
