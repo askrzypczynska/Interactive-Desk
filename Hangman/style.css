@@ -33,9 +33,44 @@ body {
     letter-spacing: 4px;
 }
 
-.piniataImg img{
+.piniataImg{
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+#piniataStatus{
+    position: relative;
+    top: 0;
+    left: 0;
     width: 400px;
     height: 400px;
+}
+
+.piniataAnimation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: piniata-shaking 0.4s infinite;
+    animation-iteration-count: 5;
+}
+
+@keyframes piniata-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); } 
+}
+
+.gameResoult{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    font-family: 'Mansalva';
+    font-size: 28px;
 }
 
 .lettersHang{
@@ -43,14 +78,15 @@ body {
     padding-top: 5px;
 }
 
-.letterUsed{
+.letter:disabled{
     text-decoration: line-through;
-    cursor: none;
+    color: #dac8c2;
 }
 
-.letterUsed:hover{
+.letter:disabled:hover{
     text-shadow: none;
-    color: #a27a7a;
+    color: #dac8c2;
+    cursor: auto;
 }
 
 .lettersHang button{
@@ -81,3 +117,4 @@ body {
     text-shadow: #a27a7a 1px 0 10px;
     color: #876666;
 }
+
