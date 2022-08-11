@@ -109,7 +109,7 @@ const checkGameResoult = () => {
 		lettersHang.removeEventListener('click', checkLetter);
 		gameResoult.innerHTML = 'YOU LOST'
 	}
-	if(countHang == chosenWord.length){
+	if(!passwordHang.innerHTML.includes("_")){
 		lettersHang.removeEventListener('click', checkLetter);
 		gameResoult.innerHTML = 'YOU WON'
 	}
