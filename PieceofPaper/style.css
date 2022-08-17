@@ -45,10 +45,12 @@ body {
     background: transparent;
 }
 
+.clear{
+    text-align:right;
+}
+
 #clearPaint{
-    display: flex;
-    text-align: right;
-    margin-right: 40px;
+    margin-right: 20px;
     font-family: 'Mansalva';
     font-size: 40px;
     color: #b59b92;
@@ -60,12 +62,15 @@ body {
 }
 
 .photoShark{
-    display:flex;
-    justify-content: center;
-    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: 300px;
+    width: 250px;
+    box-shadow: 5px 12px 5px rgba(0, 0, 0, 0.5);
 }
 
 .photoShark img{
     width: 250px;
+    height: 100%;
 }
