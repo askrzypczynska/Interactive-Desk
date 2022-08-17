@@ -14,35 +14,52 @@ let API_WEATHER_LAT = ''
 let API_WEATHER_LON = ''
 const API_WEATHER_LON2 = '&lon='
 
-const now = new Date();
+let cityTemp = ""
+
+
 
 setTime = () => {
+    let now = new Date();
+    const options = { weekday: 'short', month: 'long', day: 'numeric' };
+
     let hour = now.getHours();
     let min = now.getMinutes();
 
     timeInfo.textContent = `${hour}:${min}`
-    dateInfo.textContent = `${now.getDate()}.${now.getMonth()+1}`
-}
-
-setTime()
-
-const newCity = () => {
-    cityInput.value = "Szczecin";
-
-    if(cityInput.value === "Szczecin"){
-        cityInput.value = "";
-        cityInput.placeholder = "Enter City"
+    dateInfo.textContent = now.toLocaleDateString('en-GB', options)
+    
+    if(min<=9){
+        timeInfo.textContent = `${hour}:0${min}`
     }
 }
 
+const newCity = () => {
+
+    cityTemp = cityInput.value
+
+    if(cityInput.value !== ""){
+        cityInput.value = "";
+        cityInput.placeholder = "Enter City"
+    }
+    
+}
+
+const showLastCity = () => {
+    if(cityInput.value === ""){
+        cityInput.value = cityTemp
+    }else{
+getGCODE()
+    }
+
+}
+
 const getGCODE = () => {
-    const city = cityInput.value
-    let URL = API_LINK + city + API_KEY;
+    let URL = API_LINK + cityInput.value + API_KEY;
 
     fetch(URL)
         .then(res => res.json())
         .then(res => {getWeather(res)})
-        .catch(() => console.error("Please enter a valid city name"))
+        .catch(() => wrongCity())
 }
 
 const getWeather = (y) => {
@@ -82,16 +99,26 @@ const getWeather = (y) => {
          .catch()
 }
 
+const wrongCity = () => {
+    cityInput.value = "Wrong City";
+    weatherIcon.setAttribute('src', './img/unknown.png');
+    temperature.textContent =  '? °C';
+    humidityStatus.textContent = `Humidity: ?%`;
+
+}
+
 
 cityInput.addEventListener('click', newCity)
+cityInput.addEventListener('focusout', showLastCity)
 
 cityInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {    
         if(cityInput.value!==""){
             getGCODE()
-            console.log('dzi');
         }
     }
 });
 
+setTime();
+setInterval(setTime, 10000)
 getGCODE()

@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    caret-color: transparent;
+}
+
+.PieceofPaper {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(#fffdfc, #fcf1ed);
+    border: solid 3px #efd8d0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    width: 480px;
+    height: 630px;
+    padding: 20px;
+}
+
+.PieceofPaper::selection{
+    color: transparent;
+    background: transparent;
+}
+
+
+#drawingCanva{
+    display: block;
+}
+
+.PieceofPaper button{
+    margin-left: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.color::selection{
+    color: transparent;
+    background: transparent;
+}
+
+.clear{
+    text-align:right;
+}
+
+#clearPaint{
+    margin-right: 20px;
+    font-family: 'Mansalva';
+    font-size: 40px;
+    color: #b59b92;
+}
+
+#clearPaint:hover{
+    text-shadow: #a27a7a 1px 0 10px;
+    color: #876666;
+}
+
+.photoShark{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 250px;
+    box-shadow: 5px 12px 5px rgba(0, 0, 0, 0.5);
+}
+
+.photoShark img{
+    width: 250px;
+    height: 100%;
+}
