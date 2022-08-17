@@ -1,15 +1,95 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="eng">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InteractiveDesk</title>
+
+    <script src="https://kit.fontawesome.com/fe4ecc5880.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
-    
-    
+
+        <div class="grid-column">
+
+            <div class="grid-column1">
+                <div class="grid-row1">flower</div>
+                <div class="grid-row2">
+
+                    <div class="calculator">
+                        <div class="result">
+                            <div class="currentResult">&nbsp;</div>
+                            <div class="mainResult ">&nbsp;</div>
+                        </div>
+                        <button class="clear">AC</button>
+                        <button class="remove">DEL</button>
+                        <button class="action">%</br><p class="modulo">(Mod)</p></button>
+                        <button class="action">÷</button>
+                        <button class="numbers">7</button>
+                        <button class="numbers">8</button>
+                        <button class="numbers">9</button>
+                        <button class="action">&times</button>
+                        <button class="numbers">4</button>
+                        <button class="numbers">5</button>
+                        <button class="numbers">6</button>
+                        <button class="action">-</button>
+                        <button class="numbers">1</button>
+                        <button class="numbers">2</button>
+                        <button class="numbers">3</button>
+                        <button class="row-two action">+</button>
+                        <button class="numbers">0</button>
+                        <button class="numbers">·</button>
+                        <button class="equals">=</button>
+                
+                    </div>
+
+                </div>
+            </div>
+            <div class="grid-column2">
+                <div class="grid-row3">
+
+                    <div class="toDo">
+
+                        <div class="header-todo">
+                            <input type="text" placeholder="Enter the task text" class="todo-input" maxlength="19">
+                            <button class="addToDo"><i class="fa-regular fa-square-plus"></i></button>
+                        </div>
+                    
+                        <div class="list-todo">
+                
+                            <ul>
+                                <template class="todoTemp">
+                                    <li>
+                                        <i class="fa-regular fa-square"></i><p class="taskInfo" class="completed-todo"></p><button class="delete-todo"><i class="fas fa-times"></i></button>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid-row4">game</div>
+            </div>
+            <div class="grid-column3">
+                <div class="grid-row5">paper</div>
+            </div>
+            <div class="grid-column4">
+                <div class="grid-row6">phone</div>
+                <div class="grid-row7">another</div>
+            </div>
+
+        </div>
+
+
+        <script src="Calculator/script.js"></script>
+        <script src="ToDoList/script.js"></script>
 </body>
 </html>

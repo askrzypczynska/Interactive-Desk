@@ -1,0 +1,220 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*  - Grid - */
+
+.grid-column {
+    display: grid;
+    grid-template-columns: 390px 500px auto 290px;
+}
+
+.grid-column1 > div, .grid-column2 > div, .grid-column3 > div, .grid-column4 > div{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.grid-row1{
+    height: 400px;
+}
+
+.grid-row2{
+    height: 570px;
+}
+
+.grid-row3{
+    height: 700px;
+}
+
+.grid-row4{
+    height: 270px;
+}
+
+.grid-row5{
+    height: 970px;
+}
+
+.grid-row6{
+    height: 460px;
+}
+
+.grid-row7{
+    height: 510px;
+}
+
+/* - Calculator - */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+.calculator
+{
+	font-family: Poppins, sans-serif;
+	font-size: 30px;
+	width: 388px;
+	height: 570px;
+
+	background-image: url(img/calculator.png);
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: repeat(4, 85px);
+	grid-template-rows: minmax(100px, auto) repeat(5, 75px);
+	border: 2px solid #2e2e2e;
+	border-radius: 14px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.result
+{
+	grid-column: 1 / -1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding: 20px;
+	padding-bottom: 55px;
+}
+
+.currentResult
+{
+	font-size: 18px;
+	height: 25px;
+}
+
+.mainResult
+{
+	font-size: 40px;
+	height: 40px;
+}
+
+.calculator button
+{
+font-size: 30px;
+background-color: #545454;
+border: 2px solid #3a3a3a;
+border-radius: 5px;
+text-align: center;
+text-decoration: none;
+color: white;
+cursor: pointer;
+outline: none;
+margin: 5px;
+line-height: 1;
+}
+
+.calculator .clear
+{
+background-color: #f26d7d;
+border: 2px solid #e16675;
+} 
+
+.calculator .remove
+{
+background-color: #f26d7d;
+border: 2px solid #e16675;
+} 
+
+.calculator button:hover
+{
+filter: brightness(75%);
+}
+
+.modulo
+{
+	padding: 0;
+	margin: 0;
+	font-size: 15px;
+}
+
+.row-two
+{
+	grid-row: span 2;
+}
+
+/* toDoList */
+
+
+.toDo {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    
+    caret-color: transparent;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Indie Flower';
+    background: radial-gradient(#fff19f, #fce55b);
+    border: solid 3px #d2a446;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    height: 700px;
+}
+
+.header-todo{
+    padding-bottom: 20px;
+}
+
+.todo-input{
+    border: none;
+    border-bottom: solid 3px #d2a446;
+    background-color: transparent;
+    font-size: 28px;
+    font-family: 'Indie Flower';
+    font-weight: 300;
+    padding: 5px 10px;
+    caret-color: black;
+}
+
+.todo-input:focus{
+    outline: none;
+}
+
+
+.toDo button{
+    border: none;
+    background-color: transparent;
+}
+
+.toDo i{
+    font-size: 30px;
+    color: #d2a446;
+    cursor: pointer;
+}
+
+
+.toDo i:hover{
+    color: #9D7A32;
+}
+
+.list-todo p{
+    flex-grow: 1;
+    text-align: left;
+    max-width: 369px;
+}
+
+.list-todo li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 25px;
+}
+
+.list-todo i{
+    padding: 10px 10px;
+    border: none;
+    background-color: transparent;
+}
+
+.completed-todo{
+    text-decoration: line-through;
+}
