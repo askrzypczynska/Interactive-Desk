@@ -3,7 +3,7 @@ const action = document.querySelectorAll('.action');
 const equals = document.querySelector('.equals');
 const mainResult = document.querySelector('.mainResult');
 const currentResult = document.querySelector('.currentResult');
-const clear = document.querySelector('.clear')
+const clearCalculator = document.querySelector('.clearCalculator')
 const remove = document.querySelector('.remove')
 
 var actualNumber = "";
@@ -143,5 +143,5 @@ const deleteLast = () => {
 equals.addEventListener("click", equalsHandler);
 numbers.forEach(numbersHandler);
 action.forEach(actionInit);
-clear.addEventListener("click", clearAll);
+clearCalculator.addEventListener("click", clearAll);
 remove.addEventListener("click", deleteLast);

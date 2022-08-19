@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    caret-color: transparent;
+}
+
+.hangman {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Mansalva';
+    font-size: 30px;
+    background: radial-gradient(#fffdfc, #fcf1ed);
+    border: solid 3px #efd8d0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    width: 480px;
+    height: 630px;
+    padding: 20px;
+    color: #b59b92;
+}
+
+.passwordHang {
+    display: block;
+    height: 47px;
+    color: #a27a7a;
+    letter-spacing: 4px;
+}
+
+.piniataImg{
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+#piniataStatus{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+}
+
+.piniataAnimation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: piniata-shaking 0.4s infinite;
+    animation-iteration-count: 5;
+}
+
+@keyframes piniata-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); } 
+}
+
+.gameResoult{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    font-family: 'Mansalva';
+    font-size: 28px;
+}
+
+.lettersHang{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.letter:disabled{
+    text-decoration: line-through;
+    color: #dac8c2;
+}
+
+.letter:disabled:hover{
+    text-shadow: none;
+    color: #dac8c2;
+    cursor: auto;
+}
+
+.lettersHang button{
+    justify-content: space-between;
+    border: none;
+    background-color: transparent;
+    font-family: 'Mansalva';
+    font-size: 28px;
+    cursor: pointer;
+    color: #b59b92;
+}
+
+.lettersHang button:hover {
+    text-shadow: #b59b92 1px 0 10px;
+    color: #85726b;
+}
+
+.newGameHang{
+    float: right;
+    border: none;
+    background-color: transparent;
+    font-family: 'Mansalva';
+    cursor: pointer;
+    font-size: 20px;
+    color: #a27a7a;
+}
+.newGameHang:hover{
+    text-shadow: #a27a7a 1px 0 10px;
+    color: #876666;
+}
+

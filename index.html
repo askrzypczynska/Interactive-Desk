@@ -8,9 +8,12 @@
 
     <script src="https://kit.fontawesome.com/fe4ecc5880.js" crossorigin="anonymous"></script>
 
+    <script src="PaperHangman/p5.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
 
     <link rel="stylesheet" href="./style.css">
 
@@ -29,7 +32,7 @@
                             <div class="currentResult">&nbsp;</div>
                             <div class="mainResult ">&nbsp;</div>
                         </div>
-                        <button class="clear">AC</button>
+                        <button class="clearCalculator">AC</button>
                         <button class="remove">DEL</button>
                         <button class="action">%</br><p class="modulo">(Mod)</p></button>
                         <button class="action">÷</button>
@@ -79,10 +82,88 @@
                 <div class="grid-row4">game</div>
             </div>
             <div class="grid-column3">
-                <div class="grid-row5">paper</div>
+                <div class="grid-row5">
+
+                    <div class="papers">
+
+                        <div class="hangman paperOnTop">
+                            <div class="passwordHang"></div>
+                        
+                            <div class="piniataImg"><img  id="piniataStatus" src="img/hangman0.png"/><p class="gameResoult"></p></div>
+                     
+                             <div class="lettersHang">
+                                 <button class="letter">A</button>
+                                 <button class="letter">B</button>
+                                 <button class="letter">C</button>
+                                 <button class="letter">D</button>
+                                 <button class="letter">E</button>
+                                 <button class="letter">F</button>
+                                 <button class="letter">G</button>
+                                 <button class="letter">H</button>
+                                 <button class="letter">I</button>
+                                 <button class="letter">J</button>
+                                 <button class="letter">K</button>
+                                 <button class="letter">L</button>
+                                 <button class="letter">M</button>
+                                 <button class="letter">N</button>   
+                                 </br>
+                                 <button class="letter">O</button>
+                                 <button class="letter">P</button>
+                                 <button class="letter">Q</button>
+                                 <button class="letter">R</button>
+                                 <button class="letter">S</button>
+                                 <button class="letter">T</button>
+                                 <button class="letter">U</button>
+                                 <button class="letter">V</button>
+                                 <button class="letter">W</button>
+                                 <button class="letter">X</button>
+                                 <button class="letter">Y</button>
+                                 <button class="letter">Z</button>
+                             </div>
+                             <button class="newGameHang">New Game</button>
+                        </div>
+                
+                        <div class="PieceofPaper">
+                            <button value="#000000"><img class="color" src="img/1.png"/></button>
+                            <button value="#ff0000"><img class="color" src="img/2.png"/></button>
+                            <button value="#ff8e00"><img class="color" src="img/3.png"/></button>
+                            <button value="#ffff06"><img class="color" src="img/4.png"/></button>
+                            <button value="#00c000"><img class="color" src="img/5.png"/></button>
+                            <button value="#01c0ff"><img class="color" src="img/6.png"/></button>
+                            <button value="#a468ff"><img class="color" src="img/7.png"/></button>
+                            <button value="#ff70fe"><img class="color" src="img/8.png"/></button>
+                            <div id='drawingCanvas'></div>
+                            <div class="clear"><button id="clearPaint">X</button></div>
+                
+                            
+                            <div class="photoShark"><img src="img/shark.png"/></div>
+                
+                        </div>
+                
+                    </div>
+
+                </div>
             </div>
             <div class="grid-column4">
-                <div class="grid-row6">phone</div>
+                <div class="grid-row6">
+
+                    <div class="phone">
+                        <div class="time">00:00</div>
+                        <div class="date">Fri, 12 August</div>
+                        <div class="iconsWeather">
+                            <i class="fa-brands fa-instagram"></i><i class="fa-brands fa-github"></i><i class="fa-solid fa-bell-slash"></i>  
+                        </div>
+                
+                        <div class="city"><i class="fa-solid fa-location-dot"></i><input type="text" id="cityInput" value="Szczecin"></div>
+                
+                        <div class="weather">
+                            <img  id="weatherIcon" src=""/><p class="temperature"></p>
+                            <div class="humidityStatus"></div>
+                        </div>
+                
+                    </div>
+
+                </div>
                 <div class="grid-row7">another</div>
             </div>
 
@@ -91,5 +172,7 @@
 
         <script src="Calculator/script.js"></script>
         <script src="ToDoList/script.js"></script>
+        <script src="phone/script.js"></script>
+        <script src="PaperHangman/script.js"></script>
 </body>
 </html>
