@@ -1,3 +1,5 @@
+import "../script.js"
+
 const numbers = document.querySelectorAll('.numbers');
 const action = document.querySelectorAll('.action');
 const equals = document.querySelector('.equals');
@@ -13,30 +15,56 @@ var nextNumber = "";
 function numbersHandler(numbers){
 	numbers.addEventListener("click", () => {
 
-		if(mainResult.innerHTML === "Error" || mainResult.innerHTML !== "&nbsp;"){
+		if(mainResult.innerHTML === "Error"){
 			clearAll();
 		}
 
+
 		if(actualAction){
 			if (numbers.innerHTML === "·"){
-				if(nextNumber == ""){
-					nextNumber = "0."
+				if(nextNumber.includes(".")){
+					return;
 				}else{
-					nextNumber = nextNumber + ".";
+					if(nextNumber == ""){
+						nextNumber = "0."
+					}else{
+						nextNumber = nextNumber + ".";
+					}
 				}
 			} else{
 				nextNumber = nextNumber + numbers.innerHTML;
 			}			
 		} else {
-			if (numbers.innerHTML === "·"){
-				if(actualNumber == ""){
-					actualNumber = "0."
-				}else {
-					actualNumber = actualNumber + ".";
+			if(mainResult.innerHTML!=="&nbsp;"){
+				if(numbers.innerHTML === "·"){
+						if(actualNumber.includes(".")){
+							return;
+						}else{
+							if(actualNumber == ""){
+								actualNumber = "0."
+							}else {
+								actualNumber = actualNumber + ".";
+							}
+						}
+				} else {
+					actualNumber = mainResult.innerHTML + numbers.innerHTML;
 				}
-			} else {
+				mainResult.innerHTML = "&nbsp;" 
+			}else{
+				if(numbers.innerHTML === "·"){
+					if(actualNumber.includes(".")){
+						return;
+					}else{
+						if(actualNumber == ""){
+							actualNumber = "0."
+						}else {
+							actualNumber = actualNumber + ".";
+						}
+					}
+				} else {
 				actualNumber = actualNumber + numbers.innerHTML;
-			} 
+				} 
+			}
 		}
 
 		resultUpdate();		
@@ -103,7 +131,7 @@ function equalsHandler(equals){
 			mainResult.innerHTML = "Error";
 
 		}
-		actualNumber = "";
+		actualNumber = mainResult.innerHTML;
 		actualAction = "";
 		nextNumber = "";
 		
@@ -115,7 +143,6 @@ function equalsHandler(equals){
 function resultUpdate(){
 
 	currentResult.innerHTML = actualNumber + actualAction + nextNumber;
-
 }
 
 const clearAll = () => {
